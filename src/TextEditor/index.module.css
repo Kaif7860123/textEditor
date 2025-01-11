@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+ width: 100%;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+ box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    
+}
+.text{
+    display: flex;
+    
+}
+.text h1{
+    color: rgb(50, 48, 48);
+}
+:root{
+    --textColor:white
+}
+.text span{
+    color: rgb(50, 48, 48);
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 13px;
+}
+.text p{
+    color: rgb(50, 48, 48);
+
+    font-size: 20px;
+    margin-left: 22px;
+    margin-top: 7px;
+    font-weight: 200;
+}
+/* From Uiverse.io by JkHuger */ 
+.toggleCheckbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .toggleSlot {
+    font-size: 10px;
+    position: relative;
+    height: 2.5em;
+    width: 6em;
+    border: 0px solid transparent;
+    border-radius: 10em;
+    background-color: rgb(91, 85, 85);
+    transition: background-color 250ms;
+  }
+  
+  .toggleCheckbox:checked ~ .toggleSlot {
+    background-color: #374151;
+  }
+  
+  .toggleButton {
+    transform: translate(0.3em, 0.25em);
+    position: absolute;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    background-color: #ffeccf;
+    box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+  
+  .toggleCheckbox:checked ~ .toggleSlot .toggleButton {
+    background-color: #485367;
+    box-shadow: inset 0px 0px 0px 0.75em white;
+    transform: translate(3.65em, 0.25em);
+  }
+  
+  .sunIcon {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    color: #ffbb52;
+  }
+  
+  .sunIconWrapper {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    opacity: 1;
+    transform: translate(2em, 2em) rotate(15deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+  
+  .toggleCheckbox:checked ~ .toggleSlot .sunIconWrapper {
+    opacity: 0;
+    transform: translate(3em, 2em) rotate(0deg);
+  }
+  
+  .moonIcon {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    color: white;
+  }
+  
+  .moonIconWrapper {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    opacity: 0;
+    transform: translate(11em, 2em) rotate(0deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+  }
+  
+  .toggleCheckbox:checked ~ .toggleSlot .moonIconWrapper {
+    opacity: 1;
+    transform: translate(2em, 2em) rotate(-15deg);
+  }
+  .button{
+    display: flex;
+    gap: 10px;
+
+  }
+  .button p{
+    color: rgb(50, 48, 48);
+    font-size: 18px;
+    /* margin-left:10px; */
+    font-weight: 200;
+  }
+  .bgColor{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+ box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: black;
+   }
+   .bodyContainer{
+    width: 100%;
+   }
+   .body{
+    width: 70%;
+    margin: auto;
+    margin-top: 80px;
+   }
+   .body h1{
+    font-size: 33px;
+    color: rgb(50, 48, 48);
+    margin-bottom: 10px;
+
+   }
+   .body textarea{
+    width: 75%;
+    padding: 15px;
+    font-size: 25px;
+    color: #374151;
+    outline: none;
+    border: 1px solid rgb(140, 134, 134);
+   }
+   .btn{
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+   }
+   .btn button{
+    padding: 10px 20px;
+    background-color: rgb(94, 255, 0);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+   }
+   button:disabled{
+    background-color:rgb(103, 173, 62);
+   }
+   /* .textCont{
+    margin-top: 25px;
+   } */
+   .textCont p{
+    line-height: 1.6rem;
+   }
+  .textCont h1{
+    margin: 15px 0px;
+   }
+     @media (max-width:1610px) and (min-width:1025px) {
+      .header{
+        justify-content: space-between;
+      }
+      .btn button{
+         padding: 6px;
+         font-size: 16px;
+         color: white;
+      }
+      .body textarea{
+        width: 90%;
+      } 
+       
+     }
+   @media  (max-width:1024px) and (min-width:768px) {
+    .header{
+      justify-content: space-evenly;
+    }
+    .body textarea{
+  width: 80%;
+    }
+    .btn button{
+      padding: 8px 3px;
+       font-size: 13px;
+       color: white;
+       border-radius: 5px;
+   }
+   
+   .bgColor{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+ box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: black;
+    justify-content: space-evenly;
+
+   }
+   .header h1{
+    font-size: 30px;
+  }
+  .header span{
+    font-size: 20px;
+  }
+  
+  .header p{
+    font-size: 25px;
+  }
+   .header{
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px;
+   }
+   }
+   @media (max-width:767px) and (min-width:480px) {
+    .header{
+      justify-content: space-between;
+    }
+    .bgColor{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 20px;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      background-color: black;
+      justify-content: space-between;
+  
+     }
+    .header h1{
+      font-size: 25px;
+    }
+    .header span{
+      font-size: 18px;
+    }
+    
+    .header p{
+      font-size: 22px;
+    }
+     .header{
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 20px;
+     }
+    .body textarea{
+      width: 90%;
+      height: 50px;
+      font-size: 17px;
+        }
+        .body h1{
+          font-size: 20px;
+        }
+        .btn{
+          flex-wrap: wrap;
+        }
+        .btn button{
+          padding: 8px 5px;
+           font-size: 16px;
+           color: white;
+           border-radius: 5px;
+       }
+       .bodyContainer{
+        width: 65%;
+        margin: 0px;
+       }
+   }
+   @media (max-width:479px) and (min-width:0px) {
+    .header{
+      flex-wrap: wrap;
+    }
+    .bgColor{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 10px;
+      /* padding: 20px; */
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      background-color: black;
+      justify-content: space-between;
+  
+     }
+    .header h1{
+      font-size: 20px;
+    }
+    .header span{
+      font-size: 16px;
+      margin-top: 5px;
+    }
+    .header p{
+      font-size: 18px;
+      margin-top: 2px;
+    }
+    .btn{
+      flex-wrap: wrap;
+      margin-top: 100px;
+    }
+    .btn button{
+      padding: 8px 5px;
+       font-size: 13px;
+       color: white;
+       border-radius: 5px;
+   }
+   .body textarea{
+    width: 100%;
+    height: 25px;
+    font-size: 17px;
+    border: 1px solid gray;
+      }
+      .body h1{
+        font-size: 18px;
+         margin-bottom: 20px;
+      }
+      .body{
+         margin: auto;
+         margin-top: 120px;
+      }
+   }
