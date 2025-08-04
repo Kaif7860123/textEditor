@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./index.module.css";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
@@ -11,6 +11,7 @@ function TextEditor() {
   // const[uppercase,setUpperCase]=useState("")
   // const[customizeText,setcustomizeText]=useState("")
   const[btnCheck,setBtnCheck]=useState(false)
+  const textRef=useRef()
   const changeMode = () => {
     setcheck(!check);
   };
@@ -46,14 +47,19 @@ const countWord=splitWords.length
       setinpvalue(input)
     }
    else if(text==="COPY TEXT"){
-    window.navigator.clipboard.writeText(inpvalue).then(()=>{alert("copied")}).catch((err)=>console.log(err))
-    window.navigator.clipboard.readText(inpvalue).then(()=>{alert("copied")}).catch((err)=>console.log(err))
+     
+     textRef.current?.select()
+     window.navigator.clipboard.writeText(inpvalue).then(()=>{alert("copied")}).catch((err)=>console.log(err))
+     toast.success("successfully text has been copied ")
+    // window.navigator.clipboard.readText(inpvalue).then(()=>{alert("copied")}).catch((err)=>console.log(err))
    }
    else if(text=="CLEAR SPACES"){
       let clearExtraSpace= inpvalue.replace(/\s+/g,' ').trim()
       setinpvalue(clearExtraSpace)
+     toast.success("successfully extra spaces has been cleared ")
+
    }
-  }
+  }                                                                                                                         
   return (
     <>
       <div className={ styles.container}>
@@ -95,7 +101,7 @@ const countWord=splitWords.length
           <div className={styles.body}>
             <h1>Enter Text Below To Customize</h1>
            <textarea type="textbox" onChange={handleChange} 
-           value={inpvalue}></textarea>
+           value={inpvalue} ref={textRef}></textarea>
            <div className={styles.btn}>
             <button disabled={inpvalue.length>0?false:true} 
             onClick={()=>convertCase("UPPER CASE")}>UPPER CASE</button>

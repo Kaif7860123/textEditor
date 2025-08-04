@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -40,7 +40,6 @@
     margin-top: 7px;
     font-weight: 200;
 }
-/* From Uiverse.io by JkHuger */ 
 .toggleCheckbox {
     position: absolute;
     opacity: 0;
@@ -132,7 +131,6 @@
   .button p{
     color: rgb(50, 48, 48);
     font-size: 18px;
-    /* margin-left:10px; */
     font-weight: 200;
   }
   .bgColor{
@@ -180,9 +178,7 @@
    button:disabled{
     background-color:rgb(103, 173, 62);
    }
-   /* .textCont{
-    margin-top: 25px;
-   } */
+  
    .textCont p{
     line-height: 1.6rem;
    }
@@ -305,7 +301,6 @@
       flex-wrap: wrap;
       justify-content: space-evenly;
       padding: 10px;
-      /* padding: 20px; */
    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
       background-color: black;
       justify-content: space-between;
@@ -346,4 +341,267 @@
          margin: auto;
          margin-top: 120px;
       }
-   }
+   } */
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --textColor: white;
+}
+
+.container {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+              rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.text h1,
+.text span,
+.text p {
+  color: rgb(50, 48, 48);
+}
+
+.text h1 {
+  font-size: 6vw;
+  max-width: 100%;
+}
+
+.text span {
+  font-size: 4vw;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.text p {
+  font-size: 4.5vw;
+  margin-left: 10px;
+  margin-top: 5px;
+  font-weight: 200;
+}
+
+/* Toggle button (no changes needed for responsiveness) */
+.toggleCheckbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.toggleSlot {
+  font-size: 10px;
+  position: relative;
+  height: 2.5em;
+  width: 6em;
+  border: 0;
+  border-radius: 10em;
+  background-color: rgb(91, 85, 85);
+  transition: background-color 250ms;
+}
+
+.toggleCheckbox:checked ~ .toggleSlot {
+  background-color: #374151;
+}
+
+.toggleButton {
+  transform: translate(0.3em, 0.25em);
+  position: absolute;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  background-color: #ffeccf;
+  box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+  transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggleCheckbox:checked ~ .toggleSlot .toggleButton {
+  background-color: #485367;
+  box-shadow: inset 0px 0px 0px 0.75em white;
+  transform: translate(3.65em, 0.25em);
+}
+
+.sunIconWrapper, .moonIconWrapper {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.sunIcon {
+  color: #ffbb52;
+}
+
+.sunIconWrapper {
+  opacity: 1;
+  transform: translate(2em, 2em) rotate(15deg);
+}
+
+.toggleCheckbox:checked ~ .toggleSlot .sunIconWrapper {
+  opacity: 0;
+  transform: translate(3em, 2em) rotate(0deg);
+}
+
+.moonIcon {
+  color: white;
+}
+
+.moonIconWrapper {
+  opacity: 0;
+  transform: translate(11em, 2em) rotate(0deg);
+}
+
+.toggleCheckbox:checked ~ .toggleSlot .moonIconWrapper {
+  opacity: 1;
+  transform: translate(2em, 2em) rotate(-15deg);
+}
+
+.button {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button p {
+  color: rgb(50, 48, 48);
+  font-size: 4vw;
+  font-weight: 200;
+}
+
+.bgColor {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+              rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.bodyContainer {
+  width: 100%;
+}
+
+.body {
+  width: 90%;
+  max-width: 800px;
+  margin: 80px auto 0 auto;
+}
+
+.body h1 {
+  font-size: 6vw;
+  /* max-font-size: 33px; */
+  color: rgb(50, 48, 48);
+  margin-bottom: 10px;
+}
+
+.body textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 5vw;
+  /* max-font-size: 25px; */
+  color: #374151;
+  outline: none;
+  border: 1px solid rgb(140, 134, 134);
+  resize: vertical;
+}
+
+.btn {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn button {
+  padding: 10px 20px;
+  background-color: rgb(94, 255, 0);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 4.5vw;
+  /* max-font-size: 20px; */
+}
+
+button:disabled {
+  background-color: rgb(103, 173, 62);
+}
+
+.textCont p {
+  line-height: 1.6rem;
+  font-size: 4vw;
+}
+
+.textCont h1 {
+  margin: 15px 0px;
+  font-size: 6vw;
+}
+
+/* --- Responsive Media Queries --- */
+
+@media (min-width: 768px) {
+  .text h1 {
+    font-size: 28px;
+  }
+  .text span {
+    font-size: 18px;
+  }
+  .text p {
+    font-size: 20px;
+  }
+  .button p {
+    font-size: 18px;
+  }
+  .body h1 {
+    font-size: 30px;
+  }
+  .body textarea {
+    font-size: 20px;
+  }
+  .btn button {
+    font-size: 18px;
+  }
+  .textCont p {
+    font-size: 18px;
+  }
+  .textCont h1 {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text h1 {
+    font-size: 33px;
+  }
+  .body {
+    width: 70%;
+  }
+  .body textarea {
+    width: 75%;
+  }
+  .btn {
+    justify-content: start;
+  }
+}
